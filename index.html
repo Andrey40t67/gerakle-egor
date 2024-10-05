@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подвиги Геракла и Школьные Истории</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ffeb3b, #ff5722);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 0;
+            animation: fadeIn 1s;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 0;
+            color: #4a148c;
+        }
+
+        h2 {
+            color: #f06292;
+            margin-top: 10px;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            animation: slideIn 0.5s;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            border-radius: 20px;
+            margin-top: 20px;
+            animation: fadeIn 1s;
+        }
+
+        .smileys {
+            font-size: 50px;
+            margin-top: 10px;
+        }
+
+        .section {
+            margin: 20px 0;
+        }
+
+        .podvig, .story {
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(200, 200, 255, 0.5);
+            border-radius: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .podvig:hover, .story:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .details {
+            display: none;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            margin-top: 10px;
+        }
+
+        .animate {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.5em;
+            color: #ff5722;
+            animation: fadeInOut 2s forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeInOut {
+            0% { opacity: 1; }
+            50% { opacity: 1; transform: translate(-50%, -50%) scale(1.5); }
+            100% { opacity: 0; }
+        }
+
+        .alert {
+            background-color: red;
+            color: white;
+            padding: 20px;
+            font-size: 1.5em;
+            text-align: center;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 800px;
+            display: none;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Подвиги Геракла и Школьные Истории</h1>
+    <div class="smileys">😀 😃 😄 😁 😆 😅 😂 🤣</div>
+</header>
+
+<div class="alert" id="alert-message">
+    <strong>Лана, хватит удалять админов!</strong><br>
+    <em>"Это прикол!"</em><br>
+    <strong>Сайт посвящается тебе!</strong>
+</div>
+
+<div class="content">
+    <div class="section">
+        <h2>Подвиги Геракла</h2>
+        <div class="podvig" onclick="toggleDetails(this)">
+            <strong>Победа над Ленью:</strong>
+            <div class="details">
+                <p>Егор, именуемый Гераклом, столкнулся с величайшим врагом — Ленью, угрожающей его классу. Чтобы её победить, он объявил всем: "Кто не сделает домашнее задание, тот получит тётю Мотю на контрольной!"</p>
+                <button onclick="speak('Егор, именуемый Гераклом, столкнулся с величайшим врагом — Ленью, угрожающей его классу. Чтобы её победить, он объявил всем: "Кто не сделает домашнее задание, тот получит тётю Мотю на контрольной!"'); event.stopPropagation();">Озвучить для ленивых</button>
+            </div>
+        </div>
+
+        <div class="podvig" onclick="toggleDetails(this)">
+            <strong>Сражение с Носорогом:</strong>
+            <div class="details">
+                <p>Геракл победил Носорога (учителя физкультуры), сказав, что у него "нет времени на физкультуру", так как у него много дел — играть в видеоигры.</p>
+                <button onclick="speak('Геракл победил Носорога (учителя физкультуры), сказав, что у него "нет времени на физкультуру", так как у него много дел — играть в видеоигры.'); event.stopPropagation();">Озвучить для ленивых</button>
+            </div>
+        </div>
+
+        <div class="podvig" onclick="toggleDetails(this)">
+            <strong>Очистка стадиона от хулиганов:</strong>
+            <div class="details">
+                <p>Егор устроил "чистку" стадиона от других хулиганов, используя свои навыки переговоров, и в итоге никто не остался, кроме него.</p>
+                <button onclick="speak('Егор устроил "чистку" стадиона от других хулиганов, используя свои навыки переговоров, и в итоге никто не остался, кроме него.'); event.stopPropagation();">Озвучить для ленивых</button>
+            </div>
+        </div>
+
+        <!-- Добавлено больше подвигов -->
+        <div class="podvig" onclick="toggleDetails(this)">
+            <strong>Поиск пропавшей тетрадки:</strong>
+            <div class="details">
+                <p>Геракл искал свою пропавшую тетрадку, но в итоге нашел ее у соседа, который сделал с ней кораблик.</p>
+                <button onclick="speak('Геракл искал свою пропавшую тетрадку, но в итоге нашел ее у соседа, который сделал с ней кораблик.'); event.stopPropagation();">Озвучить для ленивых</button>
+            </div>
+        </div>
+
+        <div class="podvig" onclick="toggleDetails(this)">
+            <strong>Сразился с Олимпийским коньком:</strong>
+            <div class="details">
+                <p>Геракл был единственным, кто решился попробовать Олимпийский конек на уроке физкультуры и не упал. Теперь он чемпионом по конькам.</p>
+                <button onclick="speak('Геракл был единственным, кто решился попробовать Олимпийский конек на уроке физкультуры и не упал. Теперь он чемпионом по конькам.'); event.stopPropagation();">Озвучить для ленивых</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Школьные Истории</h2>
+        <div class="story" onclick="toggleDetails(this)">
+            <strong>Контрольная с закусками:</strong>
+            <div class="details">
+                <p>Наша классная команда, решив справиться с контрольной, собрала все сокровища: пиццу, чипсы и много кофе. В итоге, контрольная закончилась так же быстро, как и наш вечер.</p>
+                <button onclick="speak('Наша классная команда, решив справиться с контрольной, собрала все сокровища: пиццу, чипсы и много кофе. В итоге, контрольная закончилась так же быстро, как и наш вечер.'); event.stopPropagation();">Озвучить для ленивых</button>
+            </div>
+        </div>
+
+        <div class="story" onclick="toggleDetails(this)">
+            <strong>Наши попытки сбежать с урока:</strong>
+            <div class="details">
+                <p>Когда учитель отвернулся, мы решили, что это наш шанс. В итоге оказались за дверью с букетом цветной бумаги и вкусными конфетами.</p>
+                <button onclick="speak('Когда учитель отвернулся, мы решили, что это наш шанс. В итоге оказались за дверью с букетом цветной бумаги и вкусными конфетами.'); event.stopPropagation();">Озвучить для ленивых</button>
+            </div>
+        </div>
+
+        <div class="story" onclick="toggleDetails(this)">
+            <strong>Первый день в пятом классе:</strong>
+            <div class="details">
+                <p>Все волновались, но только не наш класс. Мы пришли с подругами и решили, что нам нужно покорить мир. Мы так и не поняли, что нас ждет впереди.</p>
+                <button onclick="speak('Все волновались, но только не наш класс. Мы пришли с подругами и решили, что нам нужно покорить мир. Мы так и не поняли, что нас ждет впереди.'); event.stopPropagation();">Озвучить для ленивых</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    <p>Все права защищены &copy; 2024</p>
+    <p>Сайт был создан Андреем Пашкевичем</p>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("alert-message").style.display = "block";
+    });
+
+    function toggleDetails(element) {
+        const details = element.querySelector('.details');
+        details.style.display = details.style.display === "block" ? "none" : "block";
+    }
+
+    function speak(text) {
+        const utterance = new SpeechSynthesisUtterance(text);
+        window.speechSynthesis.speak(utterance);
+
+        // Показать анимацию при озвучивании
+        const animateDiv = document.createElement("div");
+        animateDiv.className = "animate";
+        animateDiv.innerText = "Сейчас озвучиваю...";
+        document.body.appendChild(animateDiv);
+
+        setTimeout(() => {
+            document.body.removeChild(animateDiv);
+        }, 2000);
+    }
+</script>
+
+</body>
+</html>
